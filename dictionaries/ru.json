@@ -1,0 +1,23 @@
+{
+    "navigation": {
+        "home": "Дмой",
+        "about": "О нас"
+    },
+    "banner": {
+        "titleLeft": "Хостинг на",
+        "titleRight": "VPSVDS.COM",
+        "text": "IT-инфраструктура для бизнеса. Разверните и масштабируйте облако за несколько минут.",
+        "btnLeft": "Начать",
+        "btnRight": "Тарифы"
+    },
+    "page": {
+        "home": {
+            "title": "Велком",
+            "description": "Интернационализация в NextJs 13 App router"
+        },
+        "about": {
+            "title": "О нас",
+            "description": "Эта страница о нас"
+        }
+    }
+}

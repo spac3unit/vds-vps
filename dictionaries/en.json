@@ -1,0 +1,23 @@
+{
+    "navigation": {
+        "home": "Home",
+        "about": "About"
+    },
+    "banner": {
+        "titleLeft": "Hosting on ",
+        "titleRight": "VPSVDS.COM",
+        "text": "IT infrastructure for business. Deploy and scale the cloud in minutes.",
+        "btnLeft": "Start",
+        "btnRight": "Tariffs"
+    },
+    "page": {
+        "home": {
+            "title": "Welcome to NextJs i18n",
+            "description": "Internationalization in NextJs 13 App router"
+        },
+        "about": {
+            "title": "About Us",
+            "description": "This is the about page"
+        }
+    }
+}
