@@ -14,7 +14,7 @@ const dictionaries = {
     ru: () => import('@/dictionaries/ru.json').then(module => module.default)
 }
 
-export const getDictionary = async (locale: Locale) => dictionaries[locale]()
+const getDictionary = async (locale: Locale) => dictionaries[locale]()
 
 export const metadata: Metadata = {
     title: 'Create Next App',
