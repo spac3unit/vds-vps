@@ -7,13 +7,13 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react';
 
-import HeroBanner from './components/HeroBanner';
-import Calculator from './components/Calculator';
-import WhyUs from './components/WhyUs';
-import Footer, { LargeWithLogoLeft } from './components/Footer';
-import Questions from './components/Questions'
-import PricingCards from './components/PricingCards';
-import Faq from './components/FAQ';
+import HeroBanner from '../components/HeroBanner';
+import Calculator from '../components/Calculator';
+import WhyUs from '../components/WhyUs';
+import Footer, { LargeWithLogoLeft } from '../components/Footer';
+import Questions from '../components/Questions'
+import PricingCards from '../components/PricingCards';
+import Faq from '../components/FAQ';
 
 
 // how to scroll to element https://stackoverflow.com/a/70762300/8729782

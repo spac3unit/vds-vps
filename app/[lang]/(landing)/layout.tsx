@@ -1,9 +1,9 @@
 import type { Metadata } from 'next'
-import { Providers } from './providers'
+import { Providers } from '../providers'
 import { Locale, i18n } from '@/i18n.config'
-import Header from './components/header'
+import Header from '../components/header'
 import { Inter } from 'next/font/google'
-import './globals.css'
+import '../globals.css'
 import React from 'react'
 
 const inter = Inter({ subsets: ['latin'] })
