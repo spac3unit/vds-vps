@@ -32,14 +32,55 @@ import {
 } from '@chakra-ui/react';
 
 import { HamburgerIcon, CloseIcon, ChevronDownIcon, ChevronRightIcon } from '@chakra-ui/icons';
+import Image from 'next/image'
 
 import LoginMenu from '@/app/[lang]/components/LoginMenu';
 import LocaleSwitcher from './locale-switcher'
+import logoImg from './logo-light-en.webp'
 
-export default function Navbar({ nav, lang }: { nav: any, lang: any }) {
+interface NavItem {
+    label: string;
+    subLabel?: string;
+    children?: Array<NavItem>;
+    href?: string;
+}
+
+export default function Navbar({ i18text, lang }: any) {
     const { isOpen, onToggle } = useDisclosure();
     const { isOpen: isModalOpen, onOpen: onModalOpen, onClose: onModalClose } = useDisclosure();
     const { data: session } = useSession();
+
+
+    const NAV_ITEMS: Array<NavItem> = [
+        {
+            label: i18text.virtualServers.self,
+            children: [
+                {
+                    label: i18text.virtualServers.cloudVps,
+                    // subLabel: 'Быстрый запуск сервера за 2 минуты',
+                    href: '#',
+                },
+                {
+                    label: i18text.virtualServers.sharedVds,
+                    // subLabel: 'Сервер с накопителем до 5 000 Гб.',
+                    href: '#',
+                },
+                {
+                    label: i18text.virtualServers.dedicated,
+                    // subLabel: 'Скоростные процесоры до 5.3Ггц',
+                    href: '#',
+                },
+            ],
+        },
+        {
+            label: i18text.help,
+            href: '#',
+        },
+        {
+            label: i18text.promo,
+            href: '#',
+        },
+    ];
 
     return (
         <Box>
@@ -62,17 +103,17 @@ export default function Navbar({ nav, lang }: { nav: any, lang: any }) {
                         aria-label={'Toggle Navigation'}
                     />
                 </Flex>
-                <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
+                <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }} align={'center'}>
                     <Text
                         textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
                         fontFamily={'heading'}
                         color={useColorModeValue('gray.800', 'white')}
                     >
-                        Logo
+                        <Image src={logoImg} alt="me" width="100" />
                     </Text>
 
                     <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
-                        <DesktopNav />
+                        <DesktopNav navItems={NAV_ITEMS} />
                     </Flex>
                 </Flex>
 
@@ -82,7 +123,7 @@ export default function Navbar({ nav, lang }: { nav: any, lang: any }) {
             </Flex>
 
             <Collapse in={isOpen} animateOpacity>
-                <MobileNav />
+                <MobileNav navItems={NAV_ITEMS} />
             </Collapse>
 
             <Modal onClose={onModalClose} isOpen={isModalOpen} isCentered>
@@ -100,14 +141,14 @@ export default function Navbar({ nav, lang }: { nav: any, lang: any }) {
     );
 }
 
-const DesktopNav = () => {
+const DesktopNav = ({ navItems }: any) => {
     const linkColor = useColorModeValue('gray.800', 'white');
     const linkHoverColor = useColorModeValue('gray.800', 'white');
     const popoverContentBgColor = useColorModeValue('white', 'gray.800');
 
     return (
         <Stack direction={'row'} spacing={4}>
-            {NAV_ITEMS.map((navItem) => (
+            {navItems.map((navItem: NavItem) => (
                 <Box key={navItem.label}>
                     <Popover trigger={'hover'} placement={'bottom-start'}>
                         <PopoverTrigger>
@@ -127,9 +168,9 @@ const DesktopNav = () => {
                         </PopoverTrigger>
 
                         {navItem.children && (
-                            <PopoverContent border={0} boxShadow={'xl'} bg={popoverContentBgColor} p={4} rounded={'xl'} minW={'sm'}>
+                            <PopoverContent border={0} boxShadow={'xl'} bg={popoverContentBgColor} p={2} rounded={'md'} minW={'sm'}>
                                 <Stack>
-                                    {navItem.children.map((child) => (
+                                    {navItem.children.map((child: NavItem) => (
                                         <DesktopSubNav key={child.label} {...child} />
                                     ))}
                                 </Stack>
@@ -175,10 +216,10 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
     );
 };
 
-const MobileNav = () => {
+const MobileNav = ({ navItems }: any) => {
     return (
         <Stack bg={useColorModeValue('white', 'gray.800')} p={4} display={{ md: 'none' }}>
-            {NAV_ITEMS.map((navItem) => (
+            {navItems.map((navItem: NavItem) => (
                 <MobileNavItem key={navItem.label} {...navItem} />
             ))}
         </Stack>
@@ -235,40 +276,3 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
     );
 };
 
-interface NavItem {
-    label: string;
-    subLabel?: string;
-    children?: Array<NavItem>;
-    href?: string;
-}
-
-const NAV_ITEMS: Array<NavItem> = [
-    {
-        label: 'Виртуальные серверы',
-        children: [
-            {
-                label: 'Виртуальные серверы VPS',
-                subLabel: 'Быстрый запуск сервера за 2 минуты',
-                href: '#',
-            },
-            {
-                label: 'VDS Storage',
-                subLabel: 'Сервер с накопителем до 5 000 Гб.',
-                href: '#',
-            },
-            {
-                label: 'Hi-CPU',
-                subLabel: 'Скоростные процесоры до 5.3Ггц',
-                href: '#',
-            },
-        ],
-    },
-    {
-        label: 'Помощь',
-        href: '#',
-    },
-    {
-        label: 'Акции',
-        href: '#',
-    },
-];

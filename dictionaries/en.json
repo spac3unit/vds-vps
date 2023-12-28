@@ -1,7 +1,13 @@
 {
     "navigation": {
-        "home": "Home",
-        "about": "About"
+        "virtualServers": {
+            "self": "Services",
+            "cloudVps": "Cloud VPS",
+            "sharedVds": "Shared VDS",
+            "dedicated": "Dedicated Servers"
+        },
+        "help": "Help",
+        "promo": "Promotions"
     },
     "banner": {
         "titleLeft": "Hosting on ",

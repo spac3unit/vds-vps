@@ -1,7 +1,13 @@
 {
     "navigation": {
-        "home": "Дмой",
-        "about": "О нас"
+        "virtualServers": {
+            "self": "Услуги",
+            "cloudVps": "Облачный VPS",
+            "sharedVds": "Совместный VDS",
+            "dedicated": "Выделенный сервер"
+        },
+        "help": "Помощь",
+        "promo": "Акции"
     },
     "banner": {
         "titleLeft": "Хостинг на",

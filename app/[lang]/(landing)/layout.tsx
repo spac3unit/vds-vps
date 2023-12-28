@@ -40,7 +40,7 @@ export default async function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Providers>
-          <Header nav={navigation} lang={params.lang} />
+          <Header i18text={navigation} lang={params.lang} />
           {children}
         </Providers>
       </body>
