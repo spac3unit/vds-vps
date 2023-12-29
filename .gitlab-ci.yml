@@ -18,3 +18,11 @@ build:
     - docker build -t $IMAGE_NAME .
     - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $REGISTRY_URL
     - docker push $REGISTRY_URL/$IMAGE_NAME  
+
+
+# docker build -t landing:1.0 .
+# docker run -d -p 3000:3000 -t  landing:1.0
+# docker login repo.grsx.ru:5005
+# docker tag landing:1.0 repo.grsx.ru:5005/vdsvps/site/landing-page/landing/landing:1.0
+# docker push repo.grsx.ru:5005/vdsvps/site/landing-page/landing/landing:1.0
+
