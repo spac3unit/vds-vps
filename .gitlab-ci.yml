@@ -1,1 +1,6 @@
+stages:
+  - build
+  - deploy
 
+before_script:
+  - bash update.sh  
