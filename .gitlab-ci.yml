@@ -21,7 +21,7 @@ build:
 
 
 # docker build -t landing:1.0 .
-# docker run -d -p 3000:3000 -t  landing:1.0
+# docker run -d -p 3000:3000 -t landing:1.0 --name landing
 # docker login repo.grsx.ru:5005
 # docker tag landing:1.0 repo.grsx.ru:5005/vdsvps/site/landing-page/landing/landing:1.0
 # docker push repo.grsx.ru:5005/vdsvps/site/landing-page/landing/landing:1.0
