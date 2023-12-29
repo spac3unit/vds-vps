@@ -1,5 +1,16 @@
 stages:
   - build
-  - deploy
+
+variables:
+  IMAGE_NAME: "landing:latest"
+  REGISTRY_URL: "repo.grsx.ru:5005/vdsvps/site/landing-page"
+
 before_script:
-  - bash update.sh
+  - docker info
+
+build:
+  stage: build
+  script:
+    - docker build -t $IMAGE_NAME .
+    - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $REGISTRY_URL
+    - docker push $REGISTRY_URL/$IMAGE_NAME
