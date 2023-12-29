@@ -35,8 +35,8 @@ export default function PricingCards() {
     };
     return (
         // <Flex w="full" _dark={{ bg: '#3e3e3e' }} p={50} alignItems="center" justifyContent="center">
-        <Flex w="full" p={50} alignItems="center" justifyContent="center">
-            <Box py="64px" px="10">
+        <Flex w="full" pt="40px" alignItems="center" justifyContent="center">
+            <Box px="10">
                 <Box w="full" px={[10, , 4] as any} mx="auto" textAlign="center">
                     <Text mb={2} fontSize="5xl" fontWeight="bold" lineHeight="tight">
                         {/* Plans & Pricing */}

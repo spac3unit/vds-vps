@@ -1,5 +1,6 @@
 'use client';
 import { Stack, Flex, Heading, Button, Text, VStack, useBreakpointValue } from '@chakra-ui/react';
+import bg from '../../../public/hero_banner.jpeg'
 
 export default function HeroBanner({ handleTariffClick, i18text }: any) {
     return (
@@ -7,7 +8,8 @@ export default function HeroBanner({ handleTariffClick, i18text }: any) {
             w={'full'}
             h={'580px'}
             // backgroundImage={'url(https://doimages.nyc3.cdn.digitaloceanspaces.com/solutions-hero-5.svg)'}
-            backgroundImage={'url(https://masterhost.ru/images/masterhost_v2/media/backgrounds/banner_MH_vps_main.jpg)'}
+            // backgroundImage={'url(https://masterhost.ru/images/masterhost_v2/media/backgrounds/banner_MH_vps_main.jpg)'}
+            backgroundImage={`url(${bg.src})`}
             backgroundSize={'cover'}
             // backgroundPosition={'center bottom'}
             backgroundRepeat={'no-repeat'}
