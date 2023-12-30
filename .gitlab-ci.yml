@@ -15,9 +15,7 @@ build:
   tags: 
     - site 
   script:
-    - ip a
-    - hostname  
-
+    - docker build -t landing:1.0 .
 
 # docker build -t landing:1.0 .
 # docker run -d -p 3000:3000 -t landing:1.0 --name landing
