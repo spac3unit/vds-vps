@@ -12,7 +12,7 @@ import Calculator from '../components/Calculator';
 import WhyUs from '../components/WhyUs';
 import Footer, { LargeWithLogoLeft } from '../components/Footer';
 import Questions from '../components/Questions'
-import PricingCards from '../components/PricingCards';
+import PricingCards, { MultipleItems } from '../components/PricingCards';
 import Faq from '../components/FAQ';
 
 
@@ -38,11 +38,16 @@ export default async function Home({
 
       {/* <Box bg={useColorModeValue('gray.50', 'gray.800')} > */}
       <Box bg='#F7FAFC'>
-        <Container maxW="80%" borderWidth={0} borderColor="black" centerContent>
-          {/* <Pricing_v1 /> */}
-          <PricingCards />
+        <Container maxW="80%" borderWidth={0} borderColor="black" >
+          <MultipleItems />
+          {/* <PricingCards /> */}
         </Container>
       </Box>
+
+      {/* <Container maxW="90%" borderWidth={0} borderColor="black" >
+        <MultipleItems />
+      </Container> */}
+
 
       <Container maxW="1024" p="24px" borderWidth={0} borderColor="black" centerContent>
         <Calculator />

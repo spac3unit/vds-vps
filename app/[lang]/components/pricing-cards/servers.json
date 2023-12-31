@@ -1,0 +1,76 @@
+[
+    {
+        "name": "Testing",
+        "cpu": "2 vCPU",
+        "ram": "4 GB RAM",
+        "storageType": "NVMe",
+        "storageSize": "30 GB",
+        "bandwidth": "500 Mbit/s Port",
+        "snapshots": "1 Snapshot",
+        "ips": "1 Public IP",
+        "pricePerMonthRUB": "610р",
+        "pricePerMonthUSD": "6,74$"
+    },
+    {
+        "name": "Anykey",
+        "cpu": "4 vCPU",
+        "ram": "8 GB RAM ",
+        "storageType": "NVMe",
+        "storageSize": "120GB",
+        "bandwidth": "500 Mbit/s Port",
+        "snapshots": "1 Snapshot",
+        "ips": "1 Public IP 200 рублей",
+        "pricePerMonthRUB": "1900р",
+        "pricePerMonthUSD": "20$"
+    },
+    {
+        "name": "Junior",
+        "cpu": "6 vCPU Cores",
+        "ram": "16 GB RAM",
+        "storageType": "NVMe",
+        "storageSize": "200 GB",
+        "bandwidth": "500 Mbit/s Port",
+        "snapshots": "1 Snapshot",
+        "ips": "1 Public IP",
+        "pricePerMonthRUB": "3080р",
+        "pricePerMonthUSD": "34$"
+    },
+    {
+        "name": "Middle",
+        "cpu": "8 vCPU Cores",
+        "ram": "16GB RAM",
+        "storageType": "NVMe",
+        "storageSize": "320GB",
+        "bandwidth": "500 Mbit/s Port",
+        "snapshots": "2 Snapshot",
+        "ips": "1 Public IP",
+        "pricePerMonthRUB": "4340р",
+        "pricePerMonthUSD": "47,93$"
+    },
+    {
+        "name": "Senior",
+        "cpu": "10 vCPU Cores",
+        "ram": "32 GB RAM",
+        "storageType": "NVMe",
+        "storageSize": "500 GB",
+        "bandwidth": "500 Mbit/s Port",
+        "snapshots": "2 Snapshots",
+        "backups": "1 Full backup",
+        "ips": "500 Mbit/s Port",
+        "pricePerMonthRUB": "6560р",
+        "pricePerMonthUSD": "72,51$"
+    },
+    {
+        "name": "Teamlead",
+        "cpu": "12 vCPU Cores",
+        "ram": "32 GB RAM",
+        "storageType": "NVMe",
+        "storageSize": "650 GB",
+        "bandwidth": "500 Mbit/s Port",
+        "snapshots": "2 Snapshot",
+        "backups": "1 Full backup",
+        "ips": "1 Public IP",
+        "pricePerMonthRUB": "8060р",
+        "pricePerMonthUSD": "89,57$"
+    }
+]

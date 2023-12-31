@@ -1,6 +1,14 @@
 'use client';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import "./carousel.css"
+import servers from "./pricing-cards/servers.json"
+
 import React, { useState } from 'react';
 import { Box, Button, chakra, Flex, Icon, Link, SimpleGrid, Stack, Text } from '@chakra-ui/react';
+import Slider from "react-slick";
+import { ArrowForwardIcon, ArrowBackIcon } from '@chakra-ui/icons'
+
 
 export default function PricingCards() {
     const [frequency, setFrequency] = useState('month');
@@ -76,7 +84,7 @@ export default function PricingCards() {
                     </Flex>
                 </Box>
                 <Box maxW="7xl" py="20" mx="auto">
-                    <SimpleGrid columns={[1, , , 3] as any} gap={[16, 8]}>
+                    <SimpleGrid columns={[1, , , 3] as any} gap={[16, 8]} >
                         <Box rounded={['none', 'lg']} shadow={['none', 'md']} bg="white" _dark={{ bg: 'gray.800' }}>
                             <Flex
                                 direction="column"
@@ -248,5 +256,144 @@ export default function PricingCards() {
                 </Box>
             </Box>
         </Flex>
+    );
+}
+
+export function MultipleItems() {
+
+    const settings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        nextArrow: <NextArrow />,
+        prevArrow: <PrevArrow />
+    }
+    return (
+        <>
+
+            <Slider {...settings} style={{
+                display: "flex", alignItems: "center", justifyContent: "center"
+
+            }}>
+
+                {servers.map(server => (
+                    < Box rounded={['none', 'lg']} shadow={['none', 'md']} bg="white" _dark={{ bg: 'gray.800' }}>
+                        <Flex
+                            direction="column"
+                            justify="space-between"
+                            p="6"
+                            borderBottomWidth="1px"
+                            color="gray.200"
+                            _dark={{ color: 'gray.600' }}
+                        >
+                            <chakra.p mb={1} fontSize="lg" fontWeight="semibold" color="gray.700" _dark={{ color: 'gray.400' }}>
+                                {server.name}
+                            </chakra.p>
+                            <Text
+                                mb={2}
+                                fontSize="4xl"
+                                fontWeight={['bold', 'extrabold']}
+                                color="gray.900"
+                                _dark={{ color: 'gray.50' }}
+                                lineHeight="tight"
+                            >
+                                {server.pricePerMonthRUB}
+                                <chakra.span fontSize="2xl" fontWeight="medium" color="gray.600" _dark={{ color: 'gray.400' }}>
+                                    {' '}
+                                    /мес
+                                </chakra.span>
+                            </Text>
+                            <Link
+                                w={['full', , 'auto'] as any}
+                                display="inline-flex"
+                                alignItems="center"
+                                justifyContent="center"
+                                px={5}
+                                py={3}
+                                border="solid transparent"
+                                fontWeight="bold"
+                                rounded="md"
+                                shadow="sm"
+                                _light={{ color: 'black' }}
+                                bg="gray.100"
+                                _dark={{ bg: 'gray.600' }}
+                                _hover={{
+                                    bg: 'gray.300',
+                                    _dark: { bg: 'gray.700' },
+                                }}
+                            >
+                                Заказать
+                            </Link>
+                        </Flex>
+                        <Stack direction="column" p="6" spacing="3" flexGrow="1">
+                            <Feature>{server.cpu}</Feature>
+                            <Feature>{server.ram}</Feature>
+                            <Feature>{`${server.storageSize} ${server.storageType}`}</Feature>
+                            <Feature>{server.bandwidth}</Feature>
+                            <Feature>{server.snapshots}</Feature>
+                            <Feature>{server.ips}</Feature>
+                            {server.backups && <Feature>{server.backups}</Feature>}
+
+                        </Stack>
+                    </Box >
+
+
+                ))}
+            </Slider >
+        </ >
+    )
+
+}
+
+const Feature = (props: any) => {
+    return (
+        <Flex align="center">
+            <Flex shrink={0}>
+                <Icon
+                    boxSize={5}
+                    mt={1}
+                    mr={2}
+                    color="brand.500"
+                    _dark={{ color: 'brand.300' }}
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                >
+                    <path
+                        fillRule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clipRule="evenodd"
+                    ></path>
+                </Icon>
+            </Flex>
+            <Box ml={4}>
+                <chakra.span mt={2} color="gray.700" _dark={{ color: 'gray.400' }}>
+                    {props.children}
+                </chakra.span>
+            </Box>
+        </Flex>
+    );
+};
+
+function NextArrow(props: any) {
+    const { className, style, onClick } = props;
+    return (
+        <ArrowForwardIcon
+            onClick={onClick}
+            className={className}
+            style={{ ...style, display: "block", color: "black", width: "30px", height: "30px" }}
+        />
+    );
+}
+
+function PrevArrow(props: any) {
+    const { className, style, onClick } = props;
+    return (
+        <ArrowBackIcon
+            onClick={onClick}
+            className={className}
+            style={{ ...style, display: "block", color: "black", width: "30px", height: "30px" }}
+        />
     );
 }
