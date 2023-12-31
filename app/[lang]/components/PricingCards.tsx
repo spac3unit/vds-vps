@@ -262,17 +262,17 @@ export default function PricingCards() {
 export function MultipleItems() {
 
     const settings = {
-        dots: true,
+        dots: false,
         infinite: true,
         speed: 500,
         slidesToShow: 3,
-        slidesToScroll: 3,
+        slidesToScroll: 1,
         nextArrow: <NextArrow />,
         prevArrow: <PrevArrow />
     }
     return (
         <>
-
+            {/* @ts-ignore */}
             <Slider {...settings} style={{
                 display: "flex", alignItems: "center", justifyContent: "center"
 

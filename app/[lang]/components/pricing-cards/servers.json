@@ -7,6 +7,7 @@
         "storageSize": "30 GB",
         "bandwidth": "500 Mbit/s Port",
         "snapshots": "1 Snapshot",
+        "backups": "No backups",
         "ips": "1 Public IP",
         "pricePerMonthRUB": "610р",
         "pricePerMonthUSD": "6,74$"
@@ -19,6 +20,7 @@
         "storageSize": "120GB",
         "bandwidth": "500 Mbit/s Port",
         "snapshots": "1 Snapshot",
+        "backups": "No backups",
         "ips": "1 Public IP 200 рублей",
         "pricePerMonthRUB": "1900р",
         "pricePerMonthUSD": "20$"
@@ -31,6 +33,7 @@
         "storageSize": "200 GB",
         "bandwidth": "500 Mbit/s Port",
         "snapshots": "1 Snapshot",
+        "backups": "No backups",
         "ips": "1 Public IP",
         "pricePerMonthRUB": "3080р",
         "pricePerMonthUSD": "34$"
@@ -43,6 +46,7 @@
         "storageSize": "320GB",
         "bandwidth": "500 Mbit/s Port",
         "snapshots": "2 Snapshot",
+        "backups": "No backups",
         "ips": "1 Public IP",
         "pricePerMonthRUB": "4340р",
         "pricePerMonthUSD": "47,93$"
