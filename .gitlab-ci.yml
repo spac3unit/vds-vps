@@ -15,7 +15,6 @@ build:
     - docker push $CI_REGISTRY_IMAGE:latest
     - docker rm -f landing
     - docker run -d -p 3000:3000 -t $CI_REGISTRY_IMAGE:latest --name landing
-    - curl -Iv localhost:3000
 # before_script:
 #   - docker info
 # build:
