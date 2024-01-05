@@ -6,3 +6,5 @@ RUN npm install -g pnpm
 COPY . .
 RUN npm run build
 CMD ["npm", "start"]
+
+
