@@ -302,7 +302,7 @@ export function MultipleItems() {
                                 {server.pricePerMonthRUB}
                                 <chakra.span fontSize="2xl" fontWeight="medium" color="gray.600" _dark={{ color: 'gray.400' }}>
                                     {' '}
-                                    /месяц
+                                    /мес
                                 </chakra.span>
                             </Text>
                             <Link
