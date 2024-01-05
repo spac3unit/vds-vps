@@ -39,8 +39,8 @@ export default async function Home({
       {/* <Box bg={useColorModeValue('gray.50', 'gray.800')} > */}
       <Box bg='#F7FAFC'>
         <Container maxW="80%" borderWidth={0} borderColor="black" >
-          <MultipleItems />
-          {/* <PricingCards /> */}
+          {/* <MultipleItems /> */}
+          <PricingCards />
         </Container>
       </Box>
 

@@ -74,6 +74,14 @@ export default function PricingCards() {
                             </Button>
                             <Button
                                 colorScheme=""
+                                variant={frequency === '6month' ? 'outline' : 'ghost'}
+                                onClick={() => setFrequency('6month')}
+                                px={8}
+                            >
+                                6 Месяцев
+                            </Button>
+                            <Button
+                                colorScheme=""
                                 variant={frequency === 'year' ? 'outline' : 'ghost'}
                                 onClick={() => setFrequency('year')}
                                 px={8}
@@ -83,183 +91,16 @@ export default function PricingCards() {
                         </Stack>
                     </Flex>
                 </Box>
+
                 <Box maxW="7xl" py="20" mx="auto">
-                    <SimpleGrid columns={[1, , , 3] as any} gap={[16, 8]} >
-                        <Box rounded={['none', 'lg']} shadow={['none', 'md']} bg="white" _dark={{ bg: 'gray.800' }}>
-                            <Flex
-                                direction="column"
-                                justify="space-between"
-                                p="6"
-                                borderBottomWidth="1px"
-                                color="gray.200"
-                                _dark={{ color: 'gray.600' }}
-                            >
-                                <chakra.p mb={1} fontSize="lg" fontWeight="semibold" color="gray.700" _dark={{ color: 'gray.400' }}>
-                                    Стартовый
-                                </chakra.p>
-                                <Text
-                                    mb={2}
-                                    fontSize="5xl"
-                                    fontWeight={['bold', 'extrabold']}
-                                    color="gray.900"
-                                    _dark={{ color: 'gray.50' }}
-                                    lineHeight="tight"
-                                >
-                                    ${frequency === 'month' ? 15 : 140}
-                                    <chakra.span fontSize="2xl" fontWeight="medium" color="gray.600" _dark={{ color: 'gray.400' }}>
-                                        {' '}
-                                        /{frequency === 'month' ? 'мес' : 'год'}
-                                    </chakra.span>
-                                </Text>
-                                <Link
-                                    w={['full', , 'auto'] as any}
-                                    display="inline-flex"
-                                    alignItems="center"
-                                    justifyContent="center"
-                                    px={5}
-                                    py={3}
-                                    border="solid transparent"
-                                    fontWeight="bold"
-                                    rounded="md"
-                                    shadow="sm"
-                                    _light={{ color: 'black' }}
-                                    bg="gray.100"
-                                    _dark={{ bg: 'gray.600' }}
-                                    _hover={{
-                                        bg: 'gray.300',
-                                        _dark: { bg: 'gray.700' },
-                                    }}
-                                >
-                                    Заказать
-                                </Link>
-                            </Flex>
-                            <Stack direction="column" p="6" spacing="3" flexGrow="1">
-                                <Feature>1 vCPU</Feature>
-                                <Feature>1 GB RAM</Feature>
-                                <Feature>20 GB Disk space</Feature>
-                                <Feature>500 GB Bandwidth</Feature>
-                            </Stack>
-                        </Box>
-
-                        <Box rounded={['none', 'lg']} shadow={['none', 'md']} bg="white" _dark={{ bg: 'gray.800' }}>
-                            <Flex
-                                direction="column"
-                                justify="space-between"
-                                p="6"
-                                borderBottomWidth="1px"
-                                color="gray.200"
-                                _dark={{ color: 'gray.600' }}
-                            >
-                                <chakra.p mb={1} fontSize="lg" fontWeight="semibold" color="gray.700" _dark={{ color: 'gray.400' }}>
-                                    Базовый
-                                </chakra.p>
-                                <Text
-                                    mb={2}
-                                    fontSize="5xl"
-                                    fontWeight={['bold', 'extrabold']}
-                                    color="gray.900"
-                                    _dark={{ color: 'gray.50' }}
-                                    lineHeight="tight"
-                                >
-                                    ${frequency === 'month' ? 25 : 200}
-                                    <chakra.span fontSize="2xl" fontWeight="medium" color="gray.600" _dark={{ color: 'gray.400' }}>
-                                        {' '}
-                                        /{frequency === 'month' ? 'мес' : 'год'}
-                                    </chakra.span>
-                                </Text>
-                                <Link
-                                    w={['full', , 'auto'] as any}
-                                    display="inline-flex"
-                                    alignItems="center"
-                                    justifyContent="center"
-                                    px={5}
-                                    py={3}
-                                    border="solid transparent"
-                                    fontWeight="bold"
-                                    rounded="md"
-                                    shadow="sm"
-                                    _light={{ color: 'black' }}
-                                    bg="gray.100"
-                                    _dark={{ bg: 'gray.600' }}
-                                    _hover={{
-                                        bg: 'gray.300',
-                                        _dark: { bg: 'gray.700' },
-                                    }}
-                                >
-                                    Заказать
-                                </Link>
-                            </Flex>
-                            <Stack direction="column" p="6" spacing="3" flexGrow="1">
-                                <Feature>4 vCPU</Feature>
-                                <Feature>4 GB RAM</Feature>
-                                <Feature>80 GB Disk space</Feature>
-                                <Feature>2 TB Bandwidth</Feature>
-                            </Stack>
-                        </Box>
-
-                        <Box rounded={['none', 'lg']} shadow={['none', 'md']} bg="white" _dark={{ bg: 'gray.800' }}>
-                            <Flex
-                                direction="column"
-                                justify="space-between"
-                                p="6"
-                                borderBottomWidth="1px"
-                                color="gray.200"
-                                _dark={{ color: 'gray.600' }}
-                            >
-                                <chakra.p mb={1} fontSize="lg" fontWeight="semibold" color="gray.700" _dark={{ color: 'gray.400' }}>
-                                    Профессиональный
-                                </chakra.p>
-                                <Text
-                                    mb={2}
-                                    fontSize="5xl"
-                                    fontWeight={['bold', 'extrabold']}
-                                    color="gray.900"
-                                    _dark={{ color: 'gray.50' }}
-                                    lineHeight="tight"
-                                >
-                                    ${frequency === 'month' ? 35 : 250}
-                                    <chakra.span fontSize="2xl" fontWeight="medium" color="gray.600" _dark={{ color: 'gray.400' }}>
-                                        {' '}
-                                        /{frequency === 'month' ? 'мес' : 'год'}
-                                    </chakra.span>
-                                </Text>
-                                <Link
-                                    w={['full', , 'auto'] as any}
-                                    display="inline-flex"
-                                    alignItems="center"
-                                    justifyContent="center"
-                                    px={5}
-                                    py={3}
-                                    border="solid transparent"
-                                    fontWeight="bold"
-                                    rounded="md"
-                                    shadow="sm"
-                                    _light={{ color: 'black' }}
-                                    bg="gray.100"
-                                    _dark={{ bg: 'gray.600' }}
-                                    _hover={{
-                                        bg: 'gray.300',
-                                        _dark: { bg: 'gray.700' },
-                                    }}
-                                >
-                                    Заказать
-                                </Link>
-                            </Flex>
-                            <Stack direction="column" p="6" spacing="3" flexGrow="1">
-                                <Feature> 6 vCPU</Feature>
-                                <Feature>8 GB RAM</Feature>
-                                <Feature>180 GB Disk space</Feature>
-                                <Feature>2 TB Bandwidth</Feature>
-                            </Stack>
-                        </Box>
-                    </SimpleGrid>
+                    <MultipleItems frequency={frequency} />
                 </Box>
             </Box>
         </Flex>
     );
 }
 
-export function MultipleItems() {
+export function MultipleItems({ frequency }: any) {
 
     const settings = {
         dots: false,
@@ -270,6 +111,12 @@ export function MultipleItems() {
         nextArrow: <NextArrow />,
         prevArrow: <PrevArrow />
     }
+
+    const freq = frequency === 'month'
+        ? 'мес.'
+        : frequency === '6month'
+            ? '6 мес.'
+            : 'год'
     return (
         <>
             {/* @ts-ignore */}
@@ -302,7 +149,7 @@ export function MultipleItems() {
                                 {server.pricePerMonthRUB}
                                 <chakra.span fontSize="2xl" fontWeight="medium" color="gray.600" _dark={{ color: 'gray.400' }}>
                                     {' '}
-                                    /мес
+                                    /{freq}
                                 </chakra.span>
                             </Text>
                             <Link
@@ -397,3 +244,178 @@ function PrevArrow(props: any) {
         />
     );
 }
+
+
+
+
+// <Box maxW="7xl" py="20" mx="auto">
+//                     <SimpleGrid columns={[1, , , 3] as any} gap={[16, 8]} >
+//                         <Box rounded={['none', 'lg']} shadow={['none', 'md']} bg="white" _dark={{ bg: 'gray.800' }}>
+//                             <Flex
+//                                 direction="column"
+//                                 justify="space-between"
+//                                 p="6"
+//                                 borderBottomWidth="1px"
+//                                 color="gray.200"
+//                                 _dark={{ color: 'gray.600' }}
+//                             >
+//                                 <chakra.p mb={1} fontSize="lg" fontWeight="semibold" color="gray.700" _dark={{ color: 'gray.400' }}>
+//                                     Стартовый
+//                                 </chakra.p>
+//                                 <Text
+//                                     mb={2}
+//                                     fontSize="5xl"
+//                                     fontWeight={['bold', 'extrabold']}
+//                                     color="gray.900"
+//                                     _dark={{ color: 'gray.50' }}
+//                                     lineHeight="tight"
+//                                 >
+//                                     ${frequency === 'month' ? 15 : 140}
+//                                     <chakra.span fontSize="2xl" fontWeight="medium" color="gray.600" _dark={{ color: 'gray.400' }}>
+//                                         {' '}
+//                                         /{frequency === 'month' ? 'мес' : 'год'}
+//                                     </chakra.span>
+//                                 </Text>
+//                                 <Link
+//                                     w={['full', , 'auto'] as any}
+//                                     display="inline-flex"
+//                                     alignItems="center"
+//                                     justifyContent="center"
+//                                     px={5}
+//                                     py={3}
+//                                     border="solid transparent"
+//                                     fontWeight="bold"
+//                                     rounded="md"
+//                                     shadow="sm"
+//                                     _light={{ color: 'black' }}
+//                                     bg="gray.100"
+//                                     _dark={{ bg: 'gray.600' }}
+//                                     _hover={{
+//                                         bg: 'gray.300',
+//                                         _dark: { bg: 'gray.700' },
+//                                     }}
+//                                 >
+//                                     Заказать
+//                                 </Link>
+//                             </Flex>
+//                             <Stack direction="column" p="6" spacing="3" flexGrow="1">
+//                                 <Feature>1 vCPU</Feature>
+//                                 <Feature>1 GB RAM</Feature>
+//                                 <Feature>20 GB Disk space</Feature>
+//                                 <Feature>500 GB Bandwidth</Feature>
+//                             </Stack>
+//                         </Box>
+
+//                         <Box rounded={['none', 'lg']} shadow={['none', 'md']} bg="white" _dark={{ bg: 'gray.800' }}>
+//                             <Flex
+//                                 direction="column"
+//                                 justify="space-between"
+//                                 p="6"
+//                                 borderBottomWidth="1px"
+//                                 color="gray.200"
+//                                 _dark={{ color: 'gray.600' }}
+//                             >
+//                                 <chakra.p mb={1} fontSize="lg" fontWeight="semibold" color="gray.700" _dark={{ color: 'gray.400' }}>
+//                                     Базовый
+//                                 </chakra.p>
+//                                 <Text
+//                                     mb={2}
+//                                     fontSize="5xl"
+//                                     fontWeight={['bold', 'extrabold']}
+//                                     color="gray.900"
+//                                     _dark={{ color: 'gray.50' }}
+//                                     lineHeight="tight"
+//                                 >
+//                                     ${frequency === 'month' ? 25 : 200}
+//                                     <chakra.span fontSize="2xl" fontWeight="medium" color="gray.600" _dark={{ color: 'gray.400' }}>
+//                                         {' '}
+//                                         /{frequency === 'month' ? 'мес' : 'год'}
+//                                     </chakra.span>
+//                                 </Text>
+//                                 <Link
+//                                     w={['full', , 'auto'] as any}
+//                                     display="inline-flex"
+//                                     alignItems="center"
+//                                     justifyContent="center"
+//                                     px={5}
+//                                     py={3}
+//                                     border="solid transparent"
+//                                     fontWeight="bold"
+//                                     rounded="md"
+//                                     shadow="sm"
+//                                     _light={{ color: 'black' }}
+//                                     bg="gray.100"
+//                                     _dark={{ bg: 'gray.600' }}
+//                                     _hover={{
+//                                         bg: 'gray.300',
+//                                         _dark: { bg: 'gray.700' },
+//                                     }}
+//                                 >
+//                                     Заказать
+//                                 </Link>
+//                             </Flex>
+//                             <Stack direction="column" p="6" spacing="3" flexGrow="1">
+//                                 <Feature>4 vCPU</Feature>
+//                                 <Feature>4 GB RAM</Feature>
+//                                 <Feature>80 GB Disk space</Feature>
+//                                 <Feature>2 TB Bandwidth</Feature>
+//                             </Stack>
+//                         </Box>
+
+//                         <Box rounded={['none', 'lg']} shadow={['none', 'md']} bg="white" _dark={{ bg: 'gray.800' }}>
+//                             <Flex
+//                                 direction="column"
+//                                 justify="space-between"
+//                                 p="6"
+//                                 borderBottomWidth="1px"
+//                                 color="gray.200"
+//                                 _dark={{ color: 'gray.600' }}
+//                             >
+//                                 <chakra.p mb={1} fontSize="lg" fontWeight="semibold" color="gray.700" _dark={{ color: 'gray.400' }}>
+//                                     Профессиональный
+//                                 </chakra.p>
+//                                 <Text
+//                                     mb={2}
+//                                     fontSize="5xl"
+//                                     fontWeight={['bold', 'extrabold']}
+//                                     color="gray.900"
+//                                     _dark={{ color: 'gray.50' }}
+//                                     lineHeight="tight"
+//                                 >
+//                                     ${frequency === 'month' ? 35 : 250}
+//                                     <chakra.span fontSize="2xl" fontWeight="medium" color="gray.600" _dark={{ color: 'gray.400' }}>
+//                                         {' '}
+//                                         /{frequency === 'month' ? 'мес' : 'год'}
+//                                     </chakra.span>
+//                                 </Text>
+//                                 <Link
+//                                     w={['full', , 'auto'] as any}
+//                                     display="inline-flex"
+//                                     alignItems="center"
+//                                     justifyContent="center"
+//                                     px={5}
+//                                     py={3}
+//                                     border="solid transparent"
+//                                     fontWeight="bold"
+//                                     rounded="md"
+//                                     shadow="sm"
+//                                     _light={{ color: 'black' }}
+//                                     bg="gray.100"
+//                                     _dark={{ bg: 'gray.600' }}
+//                                     _hover={{
+//                                         bg: 'gray.300',
+//                                         _dark: { bg: 'gray.700' },
+//                                     }}
+//                                 >
+//                                     Заказать
+//                                 </Link>
+//                             </Flex>
+//                             <Stack direction="column" p="6" spacing="3" flexGrow="1">
+//                                 <Feature> 6 vCPU</Feature>
+//                                 <Feature>8 GB RAM</Feature>
+//                                 <Feature>180 GB Disk space</Feature>
+//                                 <Feature>2 TB Bandwidth</Feature>
+//                             </Stack>
+//                         </Box>
+//                     </SimpleGrid>
+//                 </Box>
