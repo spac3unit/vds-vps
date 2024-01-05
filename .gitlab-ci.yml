@@ -8,6 +8,8 @@ Push latest:
   variables:
     GIT_STRATEGY: none
   stage: push
+  tags:
+    - site
   only:
     - main
   script:
