@@ -7,7 +7,7 @@ before_script:
 build:
   stage: build
   script:
-    - docker build -t landing:latest .
+    - docker build -t land:latest .
     - docker tag landing:latest $CI_REGISTRY_IMAGE:latest
     - docker push $CI_REGISTRY_IMAGE:latest
     - docker rm -f landing || true
