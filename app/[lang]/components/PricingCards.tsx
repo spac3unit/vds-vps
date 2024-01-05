@@ -92,7 +92,7 @@ export default function PricingCards() {
                     </Flex>
                 </Box>
 
-                <Box maxW="7xl" py="20" mx="auto">
+                <Box maxW="7xl" py="14px" mx="auto">
                     <MultipleItems frequency={frequency} />
                 </Box>
             </Box>
