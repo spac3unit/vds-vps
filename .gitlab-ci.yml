@@ -12,6 +12,6 @@ build:
     - docker push $CI_REGISTRY_IMAGE:latest
     - docker rm -f landing || true
     - docker rmi $(docker images -q)  || true
-    - docker run --name landing -d -p 3000:3000 -t landing:latest
+    - docker run --name landing -d -p 3000:3000 -t land:latest
   tags:
     - site
