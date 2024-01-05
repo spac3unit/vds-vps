@@ -30,8 +30,8 @@ export default function Footer() {
             title: 'Контакты',
             items: [
                 { text: '8 800 200-30-33', url: '#' },
-                { text: 'support@chainops.net', url: '#' },
-                { text: '@chainopssupport_bot', url: '#' },
+                { text: 'support@vds-vps.com', url: '#' },
+                { text: '@vds-vpsbot', url: '#' },
             ],
         },
         {
