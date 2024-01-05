@@ -7,9 +7,7 @@ before_script:
   - echo $CI_REGISTRY_IMAGE
 
 Push latest:
-  variables:
-    GIT_STRATEGY: none
-  stage: push
+  stage: build
   tags:
     - site
   only:
