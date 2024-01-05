@@ -18,7 +18,7 @@ import { ChevronDownIcon } from '@chakra-ui/icons';
 export default function Faq() {
     const data = [
         {
-            question: 'Что такое VDS и VPS? И какая между ними разница?',
+            question: 'Что такое VDS и VPS? И какая между ними разница? Знали ли вы это?',
             answer:
                 'VDS — Virtual Dedicated Server или виртуальные выделенные серверы. VPS — Virtual Private Server или виртуальные частные серверы. По сути это одно и то же. И в том, и в другом случае речь про виртуальные серверы, которые берут в аренду для размещения сайтов, приложений или хранения данных.',
         },

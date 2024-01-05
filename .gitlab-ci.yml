@@ -1,25 +1,18 @@
 stages:
   - build
 
-variables:
-  IMAGE_NAME: "landing:latest"
-  REGISTRY_URL: "repo.grsx.ru:5005/vdsvps/site/landing-page"
-
 before_script:
-  - docker info
-# tags:
-#   - site 
+  - echo -n $CI_REGISTRY_PASSWORD | docker login -u $CI_REGISTRY_USER --password-stdin $CI_REGISTRY
 
 build:
   stage: build
-  tags: 
-    - site 
   script:
-    - docker build -t landing:1.0 .
-
-# docker build -t landing:1.0 .
-# docker run -d -p 3000:3000 -t landing:1.0 --name landing
-# docker login repo.grsx.ru:5005
-# docker tag landing:1.0 repo.grsx.ru:5005/vdsvps/site/landing-page/landing/landing:1.0
-# docker push repo.grsx.ru:5005/vdsvps/site/landing-page/landing/landing:1.0
-
+    - docker build -t landing:latest .
+    - docker tag landing:latest $CI_REGISTRY_IMAGE:latest
+    - docker push $CI_REGISTRY_IMAGE:latest
+    - docker rm -f landing
+    - docker run --name landing -d -p 3000:3000 -t $CI_REGISTRY_IMAGE:latest
+  tags:
+    - site
+#
+#
