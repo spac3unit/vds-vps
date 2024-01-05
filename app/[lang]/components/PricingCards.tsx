@@ -117,6 +117,12 @@ export function MultipleItems({ frequency }: any) {
         : frequency === '6month'
             ? '6 мес.'
             : 'год'
+
+    const priceMultiplicator = frequency === 'month'
+        ? 1
+        : frequency === '6month'
+            ? 6
+            : 12
     return (
         <>
             {/* @ts-ignore */}
@@ -146,7 +152,7 @@ export function MultipleItems({ frequency }: any) {
                                 _dark={{ color: 'gray.50' }}
                                 lineHeight="tight"
                             >
-                                {server.pricePerMonthRUB}
+                                {priceMultiplicator * parseInt(server.pricePerMonthRUB)}
                                 <chakra.span fontSize="2xl" fontWeight="medium" color="gray.600" _dark={{ color: 'gray.400' }}>
                                     {' '}
                                     /{freq}
