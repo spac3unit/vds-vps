@@ -1,47 +1,44 @@
-
-image: docker:20
-
 stages:
   - build
   - push
 before_script:
   - echo -n $CI_REGISTRY_PASSWORD | docker login -u $CI_REGISTRY_USER --password-stdin $CI_REGISTRY
 
-# Here, the goal is to tag the "master" branch as "latest"
-Push latest:
-  variables:
-    # We are just playing with Docker here. 
-    # We do not need GitLab to clone the source code.
-    GIT_STRATEGY: none
-  stage: push
-  only:
-    # Only "master" should be tagged "latest"
-    - master
-  script:
-    # Because we have no guarantee that this job will be picked up by the same runner 
-    # that built the image in the previous step, we pull it again locally
-    - docker pull $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
-    # Then we tag it "latest"
-    - docker tag $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA $CI_REGISTRY_IMAGE:latest
-    # Annnd we push it.
-    - docker push $CI_REGISTRY_IMAGE:latest
-  script:
-    - docker pull $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
-    - docker tag $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME
-    - docker push $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME
+# # Here, the goal is to tag the "master" branch as "latest"
+# Push latest:
+#   variables:
+#     # We are just playing with Docker here. 
+#     # We do not need GitLab to clone the source code.
+#     GIT_STRATEGY: none
+#   stage: push
+#   only:
+#     # Only "master" should be tagged "latest"
+#     - master
+#   script:
+#     # Because we have no guarantee that this job will be picked up by the same runner 
+#     # that built the image in the previous step, we pull it again locally
+#     - docker pull $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
+#     # Then we tag it "latest"
+#     - docker tag $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA $CI_REGISTRY_IMAGE:latest
+#     # Annnd we push it.
+#     - docker push $CI_REGISTRY_IMAGE:latest
+#   script:
+#     - docker pull $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
+#     - docker tag $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME
+#     - docker push $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME
 
-before_script:
-  - docker info
-build:
-  stage: build
-  tags: 
-    - site 
-  script:
-    - docker build -t landing:1.0 .
+# before_script:
+#   - docker info
+# build:
+#   stage: build
+#   tags: 
+#     - site 
+#   script:
+#     - docker build -t landing:1.0 .
 
-# docker build -t landing:1.0 .
-# docker run -d -p 3000:3000 -t landing:1.0 --name landing
-# docker login repo.grsx.ru:5005
-# docker tag landing:1.0 repo.grsx.ru:5005/vdsvps/site/landing-page/landing/landing:1.0
-# docker push repo.grsx.ru:5005/vdsvps/site/landing-page/landing/landing:1.0
+# # docker build -t landing:1.0 .
+# # docker run -d -p 3000:3000 -t landing:1.0 --name landing
+# # docker login repo.grsx.ru:5005
+# # docker tag landing:1.0 repo.grsx.ru:5005/vdsvps/site/landing-page/landing/landing:1.0
+# # docker push repo.grsx.ru:5005/vdsvps/site/landing-page/landing/landing:1.0
 
