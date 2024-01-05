@@ -10,7 +10,10 @@ build:
     - docker build -t landing:latest .
     - docker tag landing:latest $CI_REGISTRY_IMAGE:latest
     - docker push $CI_REGISTRY_IMAGE:latest
-    - docker rm -f landing
+    - docker stop $(docker ps -a -q)
+    - docker rm $(docker ps -a -q)
+    - docker rmi $(docker images -q)
+    # - docker rm -f landing
     - docker run --name landing -d -p 3000:3000 -t $CI_REGISTRY_IMAGE:latest
   tags:
     - site
