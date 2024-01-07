@@ -45,7 +45,7 @@ export default function PricingCards() {
     };
     return (
         // <Flex w="full" _dark={{ bg: '#3e3e3e' }} p={50} alignItems="center" justifyContent="center">
-        <Flex w="full" pt="40px" alignItems="center" justifyContent="center">
+        <Flex w="full" pt="1px" alignItems="center" justifyContent="center">
             <Box px="10">
                 <Box w="full" px={[10, , 4] as any} mx="auto" textAlign="center">
                     <Text mb={2} fontSize="5xl" fontWeight="bold" lineHeight="tight">
@@ -183,7 +183,7 @@ export function MultipleItems({ frequency }: any) {
                             </Link>
                         </Flex>
                         <Stack direction="column" p="6" spacing="3" flexGrow="1">
-                            <Icon
+                            {/* <Icon
                                 w={100}
                                 h={100}
 
@@ -193,26 +193,8 @@ export function MultipleItems({ frequency }: any) {
                                 fill="currentColor"
                             >
                                 <RamIcon2 />
-                            </Icon>
+                            </Icon> */}
                             <Feature>{server.cpu}</Feature>
-
-                            <Feature>
-                                <HStack align={"center"}>
-
-                                    {/* <Icon
-                                        boxSize={12}
-
-                                        color="brand.500"
-                                        _dark={{ color: 'brand.300' }}
-                                        viewBox="0 0 20 20"
-                                        fill="currentColor"
-                                    >
-                                        <RamIcon2 />
-                                    </Icon> */}
-                                    <Text>{server.ram}</Text>
-                                </HStack>
-                            </Feature>
-
                             <Feature>{server.ram}</Feature>
                             <Feature>{`${server.storageSize} ${server.storageType}`}</Feature>
                             <Feature>{server.bandwidth}</Feature>

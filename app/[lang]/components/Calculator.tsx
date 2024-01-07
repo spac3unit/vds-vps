@@ -47,7 +47,7 @@ export default function Calculator() {
     return (
         <Stack direction="column" w="100%">
             {/* Заголовок */}
-            <Heading fontSize="28px" mb="10px">
+            <Heading fontSize="28px" mb="10px" textAlign="center">
                 Калькулятор тарифа VPS
             </Heading>
 

@@ -49,12 +49,12 @@ export default async function Home({
       </Container> */}
 
 
-      <Container maxW="1024" p="24px" borderWidth={0} borderColor="black" centerContent>
+      <Container maxW="1024" p="1px" borderWidth={0} borderColor="black" centerContent>
         <Calculator />
       </Container>
 
       {/* <Box bg={useColorModeValue('gray.50', 'gray.800')} py="60px"> */}
-      <Box bg='gray.50' py="60px">
+      <Box bg='gray.50' py="10px">
         <Container maxW="80%">
           <WhyUs />
         </Container>
