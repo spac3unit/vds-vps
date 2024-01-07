@@ -51,8 +51,8 @@ export default function PricingCards() {
                         Тарифные планы
                     </Text>
                     <chakra.p mb={6} fontSize={['lg', , 'lg'] as any} color="gray.600" _dark={{ color: 'gray.400' }}>
-                        {/* 5 minute installation · Try Team plan features for 14 days · No credit card required */}
-                        Установка за 5 минут · Попробуйте тариф Базовый в течение 14 дней · Кредитная карта не требуется
+                        {/* Fast installation · Try Team plan Anykey for 3 days free */}
+                        Быстрая установка· Попробуйте тариф Anykey в течение 3 дней бесплатно
                     </chakra.p>
                     <Flex justify="center" mx={['auto', 0]} mb={-2}>
                         <Stack
