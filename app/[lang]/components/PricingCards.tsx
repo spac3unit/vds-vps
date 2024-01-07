@@ -3,9 +3,10 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./carousel.css"
 import servers from "./pricing-cards/servers.json"
+import { RamIcon2 } from './icons/';
 
 import React, { useState } from 'react';
-import { Box, Button, chakra, Flex, Icon, Link, SimpleGrid, Stack, Text } from '@chakra-ui/react';
+import { Box, Button, chakra, Flex, HStack, Icon, Link, SimpleGrid, Stack, Text } from '@chakra-ui/react';
 import Slider from "react-slick";
 import { ArrowForwardIcon, ArrowBackIcon } from '@chakra-ui/icons'
 
@@ -13,6 +14,7 @@ import { ArrowForwardIcon, ArrowBackIcon } from '@chakra-ui/icons'
 export default function PricingCards() {
     const [frequency, setFrequency] = useState('month');
 
+    // console.log(ramIcon)
     const Feature = (props: any) => {
         return (
             <Flex align="center">
@@ -181,7 +183,36 @@ export function MultipleItems({ frequency }: any) {
                             </Link>
                         </Flex>
                         <Stack direction="column" p="6" spacing="3" flexGrow="1">
+                            <Icon
+                                w={100}
+                                h={100}
+
+                                color="brand.500"
+                                _dark={{ color: 'brand.300' }}
+                                viewBox="0 0 20 20"
+                                fill="currentColor"
+                            >
+                                <RamIcon2 />
+                            </Icon>
                             <Feature>{server.cpu}</Feature>
+
+                            <Feature>
+                                <HStack align={"center"}>
+
+                                    {/* <Icon
+                                        boxSize={12}
+
+                                        color="brand.500"
+                                        _dark={{ color: 'brand.300' }}
+                                        viewBox="0 0 20 20"
+                                        fill="currentColor"
+                                    >
+                                        <RamIcon2 />
+                                    </Icon> */}
+                                    <Text>{server.ram}</Text>
+                                </HStack>
+                            </Feature>
+
                             <Feature>{server.ram}</Feature>
                             <Feature>{`${server.storageSize} ${server.storageType}`}</Feature>
                             <Feature>{server.bandwidth}</Feature>
