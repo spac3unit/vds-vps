@@ -6,12 +6,12 @@
             "sharedVds": "Shared VDS",
             "dedicated": "Dedicated Servers"
         },
-        "help": "Help",
+        "help": "Support",
         "promo": "Promotions"
     },
     "banner": {
         "titleLeft": "Hosting",
-        "titleRight": "VDS-VPS.COM",
+        "titleRight": "VDS-VPS",
         "text": "Provides IT infrastructure for business and personal purposes. What directly affects the success and competitiveness of the goods and services offered on the market.",
         "btnLeft": "Start",
         "btnRight": "Tariffs"

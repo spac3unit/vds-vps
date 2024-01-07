@@ -61,9 +61,21 @@ export default function Calculator() {
                                 ОС
                             </FormLabel>
                             <Select w="300px">
-                                <option>CentOS 8.3</option>
+                                <option>CentOS 8 Stream</option>
+                                <option>CentOS 7</option>
+                                <option>Ubuntu 18.04</option>
                                 <option>Ubuntu 20.04</option>
+                                <option>Ubuntu 22.04</option>
                                 <option>FreeBSD 12.2</option>
+                                <option>Debian 9</option>
+                                <option>Debian 10</option>
+                                <option>Debian 11</option>
+                                <option>Debian 12</option>
+                                <option>Alma Linux 8</option>
+                                <option>Rocxy Linux 8</option>
+                                <option>Rocxy Linux 9</option>
+                                <option>RedOS 7</option>
+                                <option>Astra Linux Common Edition ( Орёл )</option>
                             </Select>
                         </FormControl>
                         {/* ЦОД */}
@@ -73,7 +85,7 @@ export default function Calculator() {
                             </FormLabel>
                             <Select w="300px">
                                 <option>Казань</option>
-                                <option>Амстердам</option>
+                                <option>Москва</option>
                             </Select>
                         </FormControl>
                         {/* ЦПУ */}
