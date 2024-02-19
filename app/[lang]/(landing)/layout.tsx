@@ -2,12 +2,26 @@ import type { Metadata } from 'next'
 import { Providers } from '../providers'
 import { Locale, i18n } from '@/i18n.config'
 import Header from '../components/header'
-import { Inter } from 'next/font/google'
+import {
+  Inter,
+  Roboto,
+  Roboto_Mono,
+  Open_Sans,
+  Montserrat,
+  Lato,
+  Poppins,
+  Roboto_Condensed,
+  Oswald,
+  Noto_Sans,
+  Raleway,
+  Source_Sans_3,
+  PT_Sans,
+  Work_Sans
+} from 'next/font/google'
 import '../globals.css'
 import React from 'react'
 
-const inter = Inter({ subsets: ['latin'] })
-
+const inter = PT_Sans({ subsets: ['latin'], weight: ["400", "500", "700"], display: 'swap' } as any)
 
 const dictionaries = {
   en: () => import('@/dictionaries/en.json').then(module => module.default),
