@@ -21,7 +21,7 @@ import {
 import '../globals.css'
 import React from 'react'
 
-const inter = PT_Sans({ subsets: ['latin'], weight: ["400", "500", "700"], display: 'swap' } as any)
+const font = PT_Sans({ subsets: ['latin'], weight: ["400", "700"], display: 'swap' } as any)
 
 const dictionaries = {
   en: () => import('@/dictionaries/en.json').then(module => module.default),
@@ -52,7 +52,7 @@ export default async function RootLayout({
 
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={font.className}>
         <Providers>
           <Header i18text={navigation} lang={params.lang} />
           {children}
